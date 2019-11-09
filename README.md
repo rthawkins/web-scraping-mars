@@ -11,3 +11,6 @@ Build a web application that scrapes various websites for data related to Mars a
 3. [Flask and Mongo Utilization](https://github.com/rthawkins/web-scraping-mars/blob/master/app.py) 
 
 4. [Webpage HTML](https://github.com/rthawkins/web-scraping-mars/blob/master/templates/index.html) 
+
+### Preview:
+![Index](index.png)
