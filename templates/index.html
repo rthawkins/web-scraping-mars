@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Current State of Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body style="background-color:#d1c1a3;">
+  <div class="container-fluid">
+    <div class="jumbotron text-center" style="background:url(https://wallpapertag.com/wallpaper/full/6/7/e/191626-mars-wallpaper-1920x1200-retina.jpg);">
+      <h1>The Current State of Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Refresh Data</a></p>
+    </div>
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6"></div>
+      <div align="center"><h2><strong>Latest News:</strong></h2>
+        <br>
+        <h4><strong>{{ mars_dict.latest_title }}</strong></h4>
+        <p>{{ mars_dict.latest_news }}</p></div>
+      </div>
+
+    <br>
+
+    <br>
+
+    <div class="row justify-content-center">
+      <div class="col-sm-9">
+        <div> <img src="{{mars_dict.featured_image}}" style="max-height: auto; max-width: 100%"></div>
+      </div>
+      <div class="col-sm-3">
+        <div align="center"><h2><strong>Current Weather:</strong></h2></div>
+        <p>{{ mars_dict.current_weather }}</p>
+        <br>
+        <br>
+        <div align="center"><h2><strong>Facts:</strong></h2></div>
+        <div align="center"> {{mars_dict.facts_html|safe}}
+          <a href="{{mars_dict.facts_html}}"></a> </div>
+      </div>
+    </div>
+
+
+
+      <br>
+
+      <div class="row justify-content-center">
+          <div align="center"><h2><strong>Hemispheres:</strong></h2></div>
+          <br>
+        {% for img in mars_dict.hemispheres %}
+        <div class="col-sm-6">
+          <div class="card text-center">
+            <img class="card-img-top" src="{{ img.img_url }}" style="max-width:100%; max-height: auto;">
+            <div class="card-body">
+              <h3 class="card-title">{{img.title}}</h3>
+            </div>
+          </div>
+        </div>
+       {% endfor %}
+      </div>
+      
+      
+
+  </div>
+</div>
+</body>
+
+
+</html>
