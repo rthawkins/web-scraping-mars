@@ -15,20 +15,6 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_db"
 mongo = PyMongo(app)
 
-# conn = 'mongodb://localhost:27017/mars_db'
-# client = pymongo.MongoClient(conn)
-
-# # Declare the database
-# db = client.mars_db
-
-# # Declare the collection
-# collection = db.mars_stuff
-
-# mars_dict = mongo.db.mars_stuff.find_one()
-
-
-
-
 #################################################
 # Flask Routes
 #################################################
